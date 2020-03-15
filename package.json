@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/realcxj1989/canvas-emoji#readme",
   "dependencies": {
-    "canvas": "^2.6.0",
     "node-emoji": "^1.10.0"
   },
   "devDependencies": {

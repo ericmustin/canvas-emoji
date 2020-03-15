@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const canvas_1 = require("canvas");
+
 const emoji = require("node-emoji");
 const fs = require("fs");
 const path = require("path");
@@ -26,7 +26,7 @@ class CanvasEmoji {
             emojiArr
         };
     }
-    drawPngReplaceEmoji(data) {
+    drawPngReplaceEmoji(data, canvas) {
         const { canvasCtx } = this;
         const { fillStyle, font, y, emojiW, emojiH } = data;
         let { text, x, length } = data;
@@ -50,7 +50,7 @@ class CanvasEmoji {
             canvasCtx.fillText(text.substring(0, index), x, y);
             ctxText = canvasCtx.measureText(text.substring(0, index));
             x += ctxText.width;
-            const emojiImg = new canvas_1.Image();
+            const emojiImg = new canvas.Image();
             emojiImg.src = fs.readFileSync(path.join(__dirname, `../emoji_pngs/${emojiItem.replace("{", "").replace("}", "")}.png`));
             canvasCtx.drawImage(emojiImg, x, y - (5 / 6) * emojiH, emojiW, emojiH);
             x += emojiW;
