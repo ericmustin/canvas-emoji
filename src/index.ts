@@ -1,4 +1,4 @@
-import { Image, CanvasRenderingContext2D } from "canvas";
+import { CanvasRenderingContext2D } from "canvas";
 // @ts-ignore
 import * as emoji from "node-emoji";
 import * as fs from "fs";
@@ -54,7 +54,7 @@ export class CanvasEmoji {
    *
    * @param data
    */
-  drawPngReplaceEmoji(data: DrawPngReplaceEmojiParams) {
+  drawPngReplaceEmoji(data: DrawPngReplaceEmojiParams, canvas: any) {
     const { canvasCtx } = this;
     const { fillStyle, font, y, emojiW, emojiH } = data;
     let { text, x, length } = data;
@@ -78,7 +78,7 @@ export class CanvasEmoji {
       canvasCtx.fillText(text.substring(0, index), x, y);
       ctxText = canvasCtx.measureText(text.substring(0, index));
       x += ctxText.width;
-      const emojiImg = new Image();
+      const emojiImg = new canvas.Image();
       emojiImg.src = fs.readFileSync(
         path.join(
           __dirname,
