@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-
 const emoji = require("node-emoji");
 const fs = require("fs");
 const path = require("path");

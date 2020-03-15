@@ -22,7 +22,7 @@
   "homepage": "https://github.com/realcxj1989/canvas-emoji#readme",
   "dependencies": {
     "node-emoji": "^1.10.0",
-    "canvas": "^2.6.1",
+    "canvas": "^2.6.1"
   },
   "devDependencies": {
     "@types/node": "^12.12.6",

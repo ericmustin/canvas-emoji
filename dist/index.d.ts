@@ -17,7 +17,7 @@ export declare class CanvasEmoji {
         str: string;
         emojiArr: any;
     };
-    drawPngReplaceEmoji(data: DrawPngReplaceEmojiParams): {
+    drawPngReplaceEmoji(data: DrawPngReplaceEmojiParams, canvas: any): {
         x: number;
     };
     private showText;
